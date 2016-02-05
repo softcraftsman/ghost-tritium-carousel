@@ -1,0 +1,30 @@
+{{!< default}}
+{{! The comment above "< default" means - insert everything in this file into the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+{{! The main content area on the homepage }}
+
+<div class="container marketing {{post_class}}">
+    {{! The big featured header }}
+    
+    <!-- Image -->
+    {{#if image}}
+        <div class="image-header">
+            <img class="center-block" src="{{image}}" alt="{{title}}" height="100%">
+        </div>
+    {{/if}}
+    
+    <div class="row">
+        <h2 class="post-title">{{title}}</h2>
+    </div>
+    
+    <div class="post-content row">
+        {{content}}
+    </div>
+    
+    <div class="post-footer">
+        
+    </div>
+</div>
+{{/post}}

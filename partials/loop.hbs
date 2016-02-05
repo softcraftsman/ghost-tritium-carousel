@@ -1,0 +1,26 @@
+
+
+
+<div class="row">
+{{#foreach posts columns=3}}
+       <div class="col-lg-4">
+           {{#if image}}
+            <img class="img-circle" src="{{image}}" alt="{{meta_title}}" width="140" height="140">
+           {{else}}
+            <img class="img-circle" src="{{@blog.cover}}" alt="{{meta_title}}" width="140" height="140">
+           {{/if}}
+            <h2>{{{title}}}</h2>
+            <p>{{excerpt words="26"}}</p>
+            <p><a class="btn btn-default" href="{{url}}" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    
+    {{#if @rowEnd}}
+        </div>
+        <div class="row">
+    {{/if}}
+
+{{/foreach}}
+</div>
+    
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}
