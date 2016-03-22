@@ -1,0 +1,7 @@
+
+<h2>Authors</h2>
+{{#get "users" limit="all" }}
+    {{#foreach users}}
+                <h4><a href="{{url}}">{{name}}</a></h4>   
+    {{/foreach}}
+{{/get}}
