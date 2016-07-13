@@ -5,9 +5,11 @@
 {{#foreach posts columns=3}}
        <div class="col-lg-4">
            {{#if image}}
-            <img class="img-circle" src="{{image}}" alt="{{meta_title}}" width="140" height="140">
+            <img class="center-block img-rounded img-responsive" src="{{image}}" alt="{{meta_title}}" 
+                 width="300" height="100">
            {{else}}
-            <img class="img-circle" src="{{@blog.cover}}" alt="{{meta_title}}" width="140" height="140">
+            <img class="center-block img-rounded img-responsive" src="{{@blog.cover}}" alt="{{meta_title}}" 
+                 width="300" height="100">
            {{/if}}
             <h2>{{{title}}}</h2>
             <p>{{excerpt words="26"}}</p>

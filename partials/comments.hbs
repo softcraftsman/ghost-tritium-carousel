@@ -1,26 +1,9 @@
+
+<!-- DISQUS SUPPORT-->
+<div id="disqus_thread"></div>
+<script src="{{asset "js/disqus.js"}}"></script>
+
 <!-- START: Livefyre Embed -->
-<div id="livefyre-comments">
-    <div style="text-align: center">
-    <b>In order for comments to be displayed, livefyre must be able to get through your firewall.</b></div>
-    <div>
-        Don't forget to update your siteId
-    </div>   
-</div>
+<div id="livefyre-comments"></div>
 <script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
-<script type="text/javascript">
-(function () {
-    var articleId = fyre.conv.load.makeArticleId(null);
-    fyre.conv.load({}, [{
-        el: 'livefyre-comments',
-        network: "livefyre.com",
-        siteId: "{{! Replace with Your Site ID}}",
-        articleId: articleId,
-        signed: false,
-        collectionMeta: {
-            articleId: articleId,
-            url: fyre.conv.load.makeCollectionUrl(),
-        }
-    }], function() {});
-}());
-</script>
-<!-- END: Livefyre Embed -->
+<script src="{{asset "js/livefyre.js"}}"></script>

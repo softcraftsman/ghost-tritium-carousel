@@ -3,20 +3,55 @@
 
 
 {{! The main content area on the homepage }}
-<div class="container marketing">
+
     <!-- Image -->
     {{#if @blog.cover}}
         <div class="image-header">
             <img class="center-block" src="{{@blog.cover}}" alt="{{title}}" height="100%">
         </div>
     {{/if}}
-    
-    <div class="row">   
-        {{! The tag below includes the post loop - partials/loop.hbs }}
-        {{> "loop"}}
+    <hr />
+    <div class="col-sm-8 blog-main">  
+        {{#foreach posts}}
+            <section class="row">
+                {{^if @first}}
+                <hr />
+                {{/if}}
+                <div class="col-sm-4">
+                    {{#if image}}
+                    <img class="center-block img-rounded img-responsive" src="{{image}}" alt="{{meta_title}}" width="200" height="200">
+                    {{else}}
+                    <img class="center-block img-rounded img-responsive" src="{{@blog.logo}}" alt="{{meta_title}}" width="200" height="200">
+                    {{/if}}
+                </div>
+                <div class="col-sm-8">
+                    <h2>{{{title}}}</h2>
+                    <p>{{excerpt words="100"}}</p>
+                    <p><a class="btn btn-default" href="{{url}}" role="button">View details &raquo;</a></p>
+                </div>
+            </section>
+        {{/foreach}}
+        
+        {{! Previous/next page links - displayed on every page }}
+        {{pagination}}
+   
     </div>
+    <div class="col-sm-offset-1 col-sm-3 blog-aside">
+        <aside>
+            {{> "recent"}}
+        </aside>
+        <aside>
+            {{> "tags"}}
+        </aside>
+        <aside>
+            {{> "authors"}}
+        </aside>
+    </div>
+    
+
     
     <div class="blog-footer">
-
+        
     </div>
-</div>
+
+

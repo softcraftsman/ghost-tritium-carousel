@@ -1,0 +1,11 @@
+<div class="center-block recent-posts">
+<h2>Recent Posts</h2>
+    {{#get "posts" limit="10" as |recentPosts|}}
+        {{#foreach recentPosts as |recent|}}
+        <h6>
+           <a href="{{url}}">{{title}}</a>
+        </h6>
+        {{/foreach}}
+    {{/get}}
+    </ul>
+</div>
