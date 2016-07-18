@@ -5,33 +5,81 @@
 body {
   padding-bottom: 40px;
   color: #5a5a5a;
+  font-size: large;
+  line-height: 1.75em;
+}
+
+body > main {
+
+}
+
+body main > header {
+  padding-top: 50px;
+}
+
+body main section {
+
+}
+body > main > section > aside {
+    top: 0;
+    right: 0;
+    width: 400px;
+    padding: 50px;
+    background-color: rgba(239,237,231,.46);
+    height: 100%;
+    font-size: 1.1em;
+    border-left: 1px solid #cec9c4;
+    letter-spacing: .05em
+}
+
+body main > footer {
+
+}
+
+body > footer {
+  position: absolute;
+  background-color: red;
+  width: 100%;
+  padding: 50px;
+}
+
+
+
+article {
+  padding: 25px;
+  border-bottom: thin solid lightgray;
+}
+
+article header img {
+  float: left;
+  margin: 20px;
+}
+
+article footer {
+  margin: 20px;
 }
 
 .glyphicon {
     font-size: 25px;
 }
 
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
-.navbar-static-top {
-  /*margin-bottom: 19px;*/
-
-}
-
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
+/* Special class on .container surrounding .navbar, used for positioning it into place. 
 .navbar-wrapper {
     margin-top: 0;
-  position: static;
-  
-/*  position: absolute; */
+    position: static;
+  */
+/*  position: absolute; 
   top: 0;
   right: 0;
   left: 0;
   z-index: 20;
 }
-
-/* Flip around the padding for proper display in narrow viewports */
+*/
+/* Flip around the padding for proper display in narrow viewports 
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
@@ -44,7 +92,7 @@ body {
 .navbar-wrapper .navbar .container {
   width: auto;
 }
-
+*/
 #search {
     float: right;
     max-width: 300px;
