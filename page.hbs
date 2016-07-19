@@ -5,26 +5,30 @@
 {{#post}}
 {{! The main content area on the homepage }}
 
-<div class="container marketing {{post_class}}">
+<article class="container-fluid marketing {{post_class}}">
     {{! The big featured header }}
     
-    <!-- Image -->
-    {{#if image}}
-        <div class="image-header">
-            <img class="center-block" src="{{image}}" alt="{{title}}" height="100%">
-        </div>
-    {{/if}}
+    <header class="post-header row ">
+        <div class="post_header image-header"{{#if image}} 
+            style="background-image: url({{image}})"{{/if}}>
+       </div>
+    </header>
     
-    <div class="row">
-        <h2 class="post-title">{{title}}</h2>
+    <div class="blog-main row">
+        <section class="col-md-8 blog-articles">
+            <div class="text-center">
+            <h2 class="post-title">{{title}}</h2>
+            <br />
+            </div>
+            {{content}}
+        </section>
+
+        <aside class="col-md-4 blog-aside hidden-xs hidden-sm">
+            <section>
+                {{> "contact"}}
+            </section>
+        </aside>
+
     </div>
-    
-    <div class="post-content row">
-        {{content}}
-    </div>
-    
-    <div class="post-footer">
-        
-    </div>
-</div>
+</article>
 {{/post}}

@@ -3,67 +3,66 @@
 
 
 {{! The main content area on the homepage }}
-
+<div class="container-fluid">
 <!-- Image -->
-<header>
+<header class="row">
 {{#if @blog.cover}}
-    <div class="image-header">
-        <img class="center-block" src="{{@blog.cover}}" alt="{{title}}" height="100%">
-    </div>
+    <img class="center-block img-responsive image-header" 
+            src="{{@blog.cover}}" alt="{{title}}" >
+
 {{/if}}
-<hr />
 </header>
-<section>
-<section class="col-sm-8 blog-main">  
-    {{#foreach posts}}
-        <article>
-            <header>
-                {{#if image}}
-                <img class="media-object img-rounded img-responsive" 
-                        width="200" height="200"
-                        src="{{image}}" alt="{{meta_title}}">
-                {{else}}
-                <img class="media-object img-rounded img-responsive"
-                        width="200" height="200"
-                        src="{{@blog.logo}}" alt="{{meta_title}}">
+
+<section class="blog-main row" >
+    <section class="col-md-8 blog-articles">  
+        {{#foreach posts}}
+            <article>
+                <header>
+                    {{#if image}}
+                    <img class="media-object img-rounded img-responsive" 
+                            width="200" height="200"
+                            src="{{image}}" alt="{{meta_title}}">
+                    {{else}}
+                    <img class="media-object img-rounded img-responsive"
+                            width="200" height="200"
+                            src="{{@blog.logo}}" alt="{{meta_title}}">
+                    {{/if}}
+                    <h2 class="media-heading">{{{title}}}</h2>
+                    <p class="byline">
+                    Posted by {{author}} 
+                    on {{date updated_at format="DD MMMM YYYY"}}</p>
+                </header>
+                <section>
+                    {{excerpt words="200"}} ... 
+                    <a class="btn btn-default" href="{{url}}">View details &raquo;</a>
+                </section>
+                <footer class="text-center">
+                    {{#if tags}}                 
+                    {{#foreach tags}}
+                        <a href="{{url}}" title="{{name}}" 
+                        class="btn btn-info btn-sm tag">{{name}}</a>
+                    {{/foreach}}
                 {{/if}}
-                <h2 class="media-heading">{{{title}}}</h2>
-                <p class="byline">
-                Posted by {{author}} 
-                on {{date updated_at format="DD MMMM YYYY"}}</p>
-            </header>
-            <section>
-                {{excerpt words="200"}} ... 
-                <a class="btn btn-default" href="{{url}}">View details &raquo;</a>
-            </section>
-            <footer class="text-center">
-                {{#if tags}}                 
-                {{#foreach tags}}
-                    <a href="{{url}}" title="{{name}}" 
-                    class="btn btn-info btn-sm tag">{{name}}</a>
-                {{/foreach}}
-            {{/if}}
-            </footer>
-        </article>
-    {{/foreach}}
-    
+                </footer>
+            </article>
+        {{/foreach}}
+    </section>
+
+    <aside class="col-md-4 blog-aside hidden-xs hidden-sm">
+        <section>
+            {{> "featured"}}
+        </section>
+        <section>
+            {{> "tags"}}
+        </section>
+        <section>
+            {{> "authors"}}
+        </section>
+    </aside>
+</section>
+
+<footer class="row">
     {{! Previous/next page links - displayed on every page }}
     {{pagination}}
-
-
-</section>
-
-<aside class="col-sm-4 blog-aside">
-    <section>
-        {{> "recent"}}
-    </section>
-    <section>
-        {{> "tags"}}
-    </section>
-    <section>
-        {{> "authors"}}
-    </section>
-</aside>
-</section>
-<footer>
 </footer>
+</div>

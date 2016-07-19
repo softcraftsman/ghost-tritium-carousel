@@ -1,7 +1,11 @@
 
 <h2>Authors</h2>
-{{#get "users" limit="all" }}
+{{#get "users" limit="all" include="count.posts"}}
     {{#foreach users}}
-                <h4><a href="{{url}}">{{name}}</a></h4>   
+        {{#if count.posts}}
+        <h5><img src="{{image}}" width="64px">
+            <a href="{{url}}">{{name}}</a></h5>
+            {{/if}}
+
     {{/foreach}}
 {{/get}}

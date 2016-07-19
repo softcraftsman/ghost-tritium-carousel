@@ -3,47 +3,55 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-bottom: 40px;
   color: #5a5a5a;
   font-size: large;
   line-height: 1.75em;
+  height: 100%;
 }
 
 body > main {
-
+  position: relative;
 }
 
-body main > header {
+body main > div > header {
   padding-top: 50px;
 }
 
-body main section {
-
-}
-body > main > section > aside {
-    top: 0;
-    right: 0;
-    width: 400px;
-    padding: 50px;
-    background-color: rgba(239,237,231,.46);
-    height: 100%;
-    font-size: 1.1em;
-    border-left: 1px solid #cec9c4;
-    letter-spacing: .05em
+.blog-main {
+  min-height: 100%;
+  overflow: hidden;
 }
 
-body main > footer {
-
+.blog-articles, .blog-aside {
+  margin-bottom: -9999px;
+  padding-bottom: 9999px;
 }
 
-body > footer {
-  position: absolute;
-  background-color: red;
-  width: 100%;
+.blog-articles {
+
+}
+.blog-aside {
+  background-color: rgba(239,237,231,.46);
+}
+.blog-aside > section {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: solid lightgray thin;
+}
+
+.blog-footer {
   padding: 50px;
+  background-color: darkgrey;
 }
 
-
+.tag {
+    padding: 7px 12px;
+    margin: 5px 10px;
+    letter-spacing: .05em;
+    color: #fcfbf7;
+    border: 1px solid rgba(252,251,247,.5);
+    border-radius: 15px;
+}
 
 article {
   padding: 25px;
@@ -63,36 +71,23 @@ article footer {
     font-size: 25px;
 }
 
+#readNext {
+  background-color: lightgray;
+}
 
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
+#readNext h3 {
+  color: darkgray;
+   font: italic bold 12px/30px Georgia, serif;
+}
 
-/* Special class on .container surrounding .navbar, used for positioning it into place. 
-.navbar-wrapper {
-    margin-top: 0;
-    position: static;
-  */
-/*  position: absolute; 
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 20;
+.post-share {
+
+    margin: 2rem 0 0 0;
+    padding: 2rem 0 0 0;
+    position: relative;
+    border-top: #EBF2F6 1px solid;
 }
-*/
-/* Flip around the padding for proper display in narrow viewports 
-.navbar-wrapper > .container {
-  padding-right: 0;
-  padding-left: 0;
-}
-.navbar-wrapper .navbar {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-bottom: 0;
-}
-.navbar-wrapper .navbar .container {
-  width: auto;
-}
-*/
+
 #search {
     float: right;
     max-width: 300px;
@@ -104,6 +99,16 @@ article footer {
 
 #search div.gsc-control-cse {
     max-height: 50px;    
+}
+
+.post_header
+{
+  background-image: url(/assets/img/page-banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000000;
+  background-position: 100% 30%;
+  height: 290px;
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -145,9 +150,9 @@ article footer {
 }
 
 .image-header {
-  margin-top: 20px;
-  height: 300px;
-  margin-bottom: 20px;
+  margin-top: 25px;
+  max-height: 300px;
+  margin-bottom: 0px;
 }
 
 /* AUTHOR
@@ -158,15 +163,15 @@ article footer {
     box-sizing: border-box;
     display: block;
     position: absolute;
-    top: -40px;
+
     left: 50%;
     margin-left: -40px;
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 100%;
     overflow: hidden;
     padding: 6px;
-    background: #fff;
+
     z-index: 2;
     box-shadow: #E7EEF2 0 0 0 1px;
 }
@@ -184,8 +189,8 @@ article footer {
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 6rem 0 0 0;
-    padding: 6rem 0 0 0;
+    margin: 4rem 0 0 0;
+    padding: 2rem 0 0 0;
     border-top: #EBF2F6 1px solid;
 }
 
