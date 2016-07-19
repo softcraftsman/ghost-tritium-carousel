@@ -1,0 +1,7 @@
+{{#get "posts" include="tags" filter="tags:sidebar" as |sideposts|}}
+  {{#sideposts}}
+  <div class="post-content">
+    {{content}}
+  </div>
+  {{/sideposts}}
+{{/get}}

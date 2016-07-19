@@ -1,6 +1,12 @@
 
 <!-- DISQUS SUPPORT-->
 <div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+    this.page.url = '{{@blog.url}}{{url}}';
+    this.page.identifier = 'ghost-{{id}}';
+    };
+</script>
 <script src="{{asset "js/disqus.js"}}"></script>
 
 <!-- START: Livefyre Embed -->

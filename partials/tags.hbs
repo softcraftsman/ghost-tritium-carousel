@@ -2,7 +2,7 @@
 <div class="center-block tag-cloud">
 <h2>Tags</h2>
     
-{{#get "tags" limit="all" filter="name:-carousel" include="count.posts" 
+{{#get "tags" limit="all" filter="name:-carousel+name:-sidebar" include="count.posts" 
               order="count.posts desc"}}
     {{#foreach tags}}
         <span class="tag-count-{{count.posts}}">
